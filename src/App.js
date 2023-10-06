@@ -7,12 +7,7 @@ import PostPage from './PostPage'
 import About from './About'
 import Missing from './Missing'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { format } from 'date-fns'
-import api from './api/posts'
 import EditPost from './EditPost'
-import useWindowSize from './hooks/useWindowSize'
-import useAxiosFetch from './hooks/useAxiosFetch'
 import { DataProvider } from './context/DataContext'
 
 function App() {
