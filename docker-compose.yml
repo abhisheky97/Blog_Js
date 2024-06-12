@@ -1,0 +1,21 @@
+version: '3'
+services:
+  react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - json-server
+  json-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.jsonServer
+    ports:
+      - "3500:3500"
+    volumes:
+      - .:/app
+      - json-data:/app/data
+volumes:
+  json-data:

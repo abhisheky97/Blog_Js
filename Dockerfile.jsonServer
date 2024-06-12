@@ -1,0 +1,13 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN npm install json-server
+
+RUN mkdir data
+
+COPY data/db.json data/
+
+EXPOSE 3500
+
+CMD ["npx", "json-server", "--watch", "data/db.json", "--port", "3500"]
