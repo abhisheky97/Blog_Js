@@ -12,6 +12,10 @@ jobs:
       - name: Check Out Repo
         uses: actions/checkout@v2
 
+      - name: Generate Date
+        id: date
+        run: echo "::set-output name=date::$(date +%Y%m%d)"
+
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@v1
         with:
